@@ -1,0 +1,65 @@
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\EntityFramwork CRUD 2.exe
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\EntityFramwork CRUD 2.deps.json
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\EntityFramwork CRUD 2.runtimeconfig.json
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\EntityFramwork CRUD 2.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\EntityFramwork CRUD 2.pdb
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\Google.Protobuf.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\Humanizer.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\K4os.Compression.LZ4.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\K4os.Compression.LZ4.Streams.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\K4os.Hash.xxHash.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\Microsoft.Extensions.Caching.Memory.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\Microsoft.Extensions.Configuration.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\Microsoft.Extensions.Configuration.Json.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\Microsoft.Extensions.FileProviders.Physical.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\Microsoft.Extensions.FileSystemGlobbing.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\Microsoft.Extensions.Logging.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\Microsoft.Extensions.Primitives.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\Mono.TextTemplating.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\MySql.Data.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\MySql.EntityFrameworkCore.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\MySqlConnector.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\Pomelo.EntityFrameworkCore.MySql.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\BouncyCastle.Crypto.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\System.CodeDom.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\System.Drawing.Common.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\System.IO.Pipelines.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\System.Security.Permissions.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\System.Windows.Extensions.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\runtimes\win-x64\native\comerr64.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\runtimes\win-x64\native\gssapi64.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\runtimes\win-x64\native\k5sprt64.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\runtimes\win-x64\native\krb5_64.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\runtimes\win-x64\native\krbcc64.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\EntityFramwork CRUD 2\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\EntityFramwork CRUD 2\obj\Debug\net7.0\EntityFramwork CRUD 2.csproj.AssemblyReference.cache
+D:\EntityFramwork CRUD 2\obj\Debug\net7.0\EntityFramwork CRUD 2.GeneratedMSBuildEditorConfig.editorconfig
+D:\EntityFramwork CRUD 2\obj\Debug\net7.0\EntityFramwork CRUD 2.AssemblyInfoInputs.cache
+D:\EntityFramwork CRUD 2\obj\Debug\net7.0\EntityFramwork CRUD 2.AssemblyInfo.cs
+D:\EntityFramwork CRUD 2\obj\Debug\net7.0\EntityFramwork CRUD 2.csproj.CoreCompileInputs.cache
+D:\EntityFramwork CRUD 2\obj\Debug\net7.0\EntityFramwork CRUD 2.csproj.CopyComplete
+D:\EntityFramwork CRUD 2\obj\Debug\net7.0\EntityFramwork CRUD 2.dll
+D:\EntityFramwork CRUD 2\obj\Debug\net7.0\refint\EntityFramwork CRUD 2.dll
+D:\EntityFramwork CRUD 2\obj\Debug\net7.0\EntityFramwork CRUD 2.pdb
+D:\EntityFramwork CRUD 2\obj\Debug\net7.0\EntityFramwork CRUD 2.genruntimeconfig.cache
+D:\EntityFramwork CRUD 2\obj\Debug\net7.0\ref\EntityFramwork CRUD 2.dll
