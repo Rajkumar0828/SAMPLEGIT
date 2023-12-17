@@ -9,10 +9,10 @@ namespace APICrudServer.Data
 
          public string FirstName { get; set; }=String.Empty;
 
-         public string LastName { get; set; }=" ";
+         public string LastName { get; set; }=String.Empty;
 
-        public string PhoneNo { get; set; }=" ";
+        public string PhoneNo { get; set; }=String.Empty;
 
-        public string EmailId { get; set; }=" ";
+        public string EmailId { get; set; }=String.Empty;
     }
 }
