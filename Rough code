@@ -49,9 +49,7 @@
 
 
 
-
-
-protected void btnRegister_Click(object sender, EventArgs e)
+ protected void btnRegister_Click(object sender, EventArgs e)
         {
             // Retrieve values from the form
             string firstName = txtFirstName.Text;
@@ -60,11 +58,65 @@ protected void btnRegister_Click(object sender, EventArgs e)
             string password = txtPassword.Text;
             string department = ddlDepartment.SelectedValue;
 
-            // Add your code to save the employee information to the database or perform any other necessary actions.
+            // Create a unique key for the cache entry (you may use the email as a key)
+            string cacheKey = $"Employee_{email}";
 
-            // For now, let's display a simple message
-            Response.Write($"Employee registered successfully!<br/>Name: {firstName} {lastName}<br/>Email: {email}<br/>Department: {department}");
+            // Check if the data is already in cache
+            if (Cache[cacheKey] == null)
+            {
+                // If not in cache, create a new cache entry
+                EmployeeInfo employeeInfo = new EmployeeInfo
+                {
+                    FirstName = firstName,
+                    LastName = lastName,
+                    Email = email,
+                    Password = password,
+                    Department = department
+                };
+
+                // Add the data to cache with a specific duration (e.g., 10 minutes)
+                Cache.Insert(cacheKey, employeeInfo, null, DateTime.Now.AddMinutes(10), System.Web.Caching.Cache.NoSlidingExpiration);
+
+                // Display a success message
+                Response.Write($"Employee registered successfully!<br/>Name: {firstName} {lastName}<br/>Email: {email}<br/>Department: {department}");
+            }
+            else
+            {
+                // Display a message if the data is already in cache
+                Response.Write($"Employee with email {email} is already registered.");
+            }
         }
+
+        // Class to represent employee information
+        private class EmployeeInfo
+        {
+            public string FirstName { get; set; }
+            public string LastName { get; set; }
+            public string Email { get; set; }
+            public string Password { get; set; }
+            public string Department { get; set; }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
