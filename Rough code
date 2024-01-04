@@ -41,6 +41,43 @@
 
             <div>
                 <asp:Button ID="btnRegister" runat="server" Text="Register" OnClick="btnRegister_Click" CssClass="btn btn-primary" />
+
+
+
+
+
+
+
+
+
+
+protected void btnRegister_Click(object sender, EventArgs e)
+        {
+            // Retrieve values from the form
+            string firstName = txtFirstName.Text;
+            string lastName = txtLastName.Text;
+            string email = txtEmail.Text;
+            string password = txtPassword.Text;
+            string department = ddlDepartment.SelectedValue;
+
+            // Add your code to save the employee information to the database or perform any other necessary actions.
+
+            // For now, let's display a simple message
+            Response.Write($"Employee registered successfully!<br/>Name: {firstName} {lastName}<br/>Email: {email}<br/>Department: {department}");
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
             </div>
         </div>
     </form>
