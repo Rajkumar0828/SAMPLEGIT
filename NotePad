@@ -1,15 +1,33 @@
-<div className="login-form">
-                            <form onSubmit={(e) => login(e)} >
-                                <div>
+describe('YourLoginFormComponent', () => {
+  it('validates email and password', async () => {
+    const { getByTestId } = render(<YourLoginFormComponent />);
 
+    // Email validation
+    const emailInput = getByTestId('usernametestbox');
+    fireEvent.change(emailInput, { target: { value: 'invalidEmail' } });
+    expect(emailInput.value).toBe('invalidEmail');
+    // Assuming you have a specific email validation logic, update the following assertion accordingly.
+    expect(emailInput).toHaveClass('is-invalid'); // Update with your actual CSS class for invalid state
 
-                                    <input data-testid="usernametestbox" type="text" class="form-control" id="username" placeholder='Enter your email' value={loginuser.Email} onChange={(e) => setLoginUser({ ...loginuser, Email: e.target.value })} />
-                                    <label ref={emailerrorref} className='errmsg'></label>
-                                </div>
+    // Password validation
+    const passwordInput = getByTestId('pwdtextbox');
+    fireEvent.change(passwordInput, { target: { value: 'short' } });
+    expect(passwordInput.value).toBe('short');
+    // Assuming you have a specific password length validation logic, update the following assertion accordingly.
+    expect(passwordInput).toHaveClass('is-invalid'); // Update with your actual CSS class for invalid state
 
+    fireEvent.change(passwordInput, { target: { value: 'validPassword' } });
+    expect(passwordInput.value).toBe('validPassword');
+    // Assuming you have a specific password validation logic, update the following assertion accordingly.
+    expect(passwordInput).not.toHaveClass('is-invalid'); // Update with your actual CSS class for valid state
 
-                                <div>
+    // Add your login function and submit the form
+    const submitButton = getByText('Submit'); // Replace 'Submit' with your actual submit button text
+    fireEvent.click(submitButton);
 
-                                    <input data-testid="pwdtextbox"type="password" class="form-control" id="password" placeholder='Enter a password' value={loginuser.Password} onChange={(e) => setLoginUser({ ...loginuser, Password: e.target.value })} />
-                                    <label ref={pwderrorref} className='errmsg'></label>
-                                </div>
+    // Add assertions related to the login process if needed
+    await waitFor(() => {
+      // Add your assertions here, for example, checking if the login was successful
+    });
+  });
+});
