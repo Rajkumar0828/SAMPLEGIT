@@ -1,0 +1,15 @@
+<div className="login-form">
+                            <form onSubmit={(e) => login(e)} >
+                                <div>
+
+
+                                    <input data-testid="usernametestbox" type="text" class="form-control" id="username" placeholder='Enter your email' value={loginuser.Email} onChange={(e) => setLoginUser({ ...loginuser, Email: e.target.value })} />
+                                    <label ref={emailerrorref} className='errmsg'></label>
+                                </div>
+
+
+                                <div>
+
+                                    <input data-testid="pwdtextbox"type="password" class="form-control" id="password" placeholder='Enter a password' value={loginuser.Password} onChange={(e) => setLoginUser({ ...loginuser, Password: e.target.value })} />
+                                    <label ref={pwderrorref} className='errmsg'></label>
+                                </div>
