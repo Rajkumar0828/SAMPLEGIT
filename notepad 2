@@ -1,43 +1,65 @@
 import React, { useState } from 'react';
 
-function HomePage() {
-  const [mainBodyDisplay, setMainBodyDisplay] = useState('block');
-  const [startBtnDisplay, setStartBtnDisplay] = useState('none');
-  const [adminBtnDisplay, setAdminBtnDisplay] = useState('none');
-  const [mainPanelDisplay, setMainPanelDisplay] = useState('block');
-  const [questions, setQuestions] = useState([]);
+const QuestionForm = ({ addQuestion }) => {
+  const [question, setQuestion] = useState('');
+  const [options, setOptions] = useState(['', '']);
 
-  const handleHomePage = () => {
-    setMainBodyDisplay('none');
-    setStartBtnDisplay('block');
-    setAdminBtnDisplay('block');
-    setMainPanelDisplay('none');
-    setQuestions([]); // Clearing questions array
+  const handleOptionChange = (index, value) => {
+    const newOptions = [...options];
+    newOptions[index] = value;
+    setOptions(newOptions);
+  };
+
+  const handleAddOption = () => {
+    setOptions([...options, '']);
+  };
+
+  const handleRemoveOption = (index) => {
+    const newOptions = [...options];
+    newOptions.splice(index, 1);
+    setOptions(newOptions);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addQuestion({ question, options });
+    setQuestion('');
+    setOptions(['', '']);
   };
 
   return (
-    <div>
-      <div id="mainBody" style={{ display: mainBodyDisplay }}>
-        Main Body Content
-      </div>
-      <button id="startBtn" style={{ display: startBtnDisplay }}>
-        Start Button
+    <form onSubmit={handleSubmit}>
+      <label>
+        Question:
+        <input
+          type="text"
+          value={question}
+          onChange={(e) => setQuestion(e.target.value)}
+          required
+        />
+      </label>
+      {options.map((option, index) => (
+        <div key={index}>
+          <label>
+            Option {index + 1}:
+            <input
+              type="text"
+              value={option}
+              onChange={(e) => handleOptionChange(index, e.target.value)}
+              required
+            />
+          </label>
+          <button type="button" onClick={() => handleRemoveOption(index)}>
+            Remove Option
+          </button>
+        </div>
+      ))}
+      <button type="button" onClick={handleAddOption}>
+        Add Option
       </button>
-      <button id="adminBtn" style={{ display: adminBtnDisplay }}>
-        Admin Button
-      </button>
-      <div id="mainPanel" style={{ display: mainPanelDisplay }}>
-        Main Panel Content
-      </div>
-      <ul id="questionsUl">
-        {questions.map((question, index) => (
-          <li key={index}>{question}</li>
-        ))}
-      </ul>
-      <button onClick={handleHomePage}>Done Button</button>
-    </div>
+      <button type="submit">Add Question</button>
+    </form>
   );
-}
+};
 
-export default HomePage;
-
+export default QuestionForm;
