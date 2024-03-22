@@ -1,0 +1,83 @@
+import React, { useState } from 'react';
+
+function App() {
+  const [questions, setQuestions] = useState([]);
+  const [question, setQuestion] = useState('');
+  const [options, setOptions] = useState(['']);
+
+  const handleOptionChange = (index, value) => {
+    const newOptions = [...options];
+    newOptions[index] = value;
+    setOptions(newOptions);
+  };
+
+  const handleAddOption = () => {
+    setOptions([...options, '']);
+  };
+
+  const handleRemoveOption = (index) => {
+    const newOptions = [...options];
+    newOptions.splice(index, 1);
+    setOptions(newOptions);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newQuestion = { question, options };
+    setQuestions([...questions, newQuestion]);
+    setQuestion('');
+    setOptions(['']);
+  };
+
+  return (
+    <div>
+      <h1>Survey System</h1>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Question:
+          <input
+            type="text"
+            value={question}
+            onChange={(e) => setQuestion(e.target.value)}
+            required
+          />
+        </label>
+        {options.map((option, index) => (
+          <div key={index}>
+            <label>
+              Option {index + 1}:
+              <input
+                type="text"
+                value={option}
+                onChange={(e) => handleOptionChange(index, e.target.value)}
+                required
+              />
+            </label>
+            <button type="button" onClick={() => handleRemoveOption(index)}>
+              Remove Option
+            </button>
+          </div>
+        ))}
+        <button type="button" onClick={handleAddOption}>
+          Add Option
+        </button>
+        <button type="submit">Add Question</button>
+      </form>
+      <h2>Questions</h2>
+      <ul>
+        {questions.map((question, index) => (
+          <li key={index}>
+            {question.question}
+            <ul>
+              {question.options.map((option, optionIndex) => (
+                <li key={optionIndex}>{option}</li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default App;
