@@ -1,0 +1,32 @@
+import React, { useState } from 'react';
+import QuestionForm from './QuestionForm';
+
+function App() {
+  const [questions, setQuestions] = useState([]);
+
+  const addQuestion = (newQuestion) => {
+    setQuestions([...questions, newQuestion]);
+  };
+
+  return (
+    <div>
+      <h1>Survey System</h1>
+      <QuestionForm addQuestion={addQuestion} />
+      <h2>Questions</h2>
+      <ul>
+        {questions.map((question, index) => (
+          <li key={index}>
+            {question.question}
+            <ul>
+              {question.options.map((option, optionIndex) => (
+                <li key={optionIndex}>{option}</li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default App;
