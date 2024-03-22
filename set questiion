@@ -29,6 +29,11 @@ function App() {
     setOptions(['']);
   };
 
+  const handleAddNewQuestion = () => {
+    setQuestion('');
+    setOptions(['']);
+  };
+
   return (
     <div>
       <h1>Survey System</h1>
@@ -62,6 +67,9 @@ function App() {
           Add Option
         </button>
         <button type="submit">Add Question</button>
+        <button type="button" onClick={handleAddNewQuestion}>
+          Add New Question
+        </button>
       </form>
       <h2>Questions</h2>
       <ul>
