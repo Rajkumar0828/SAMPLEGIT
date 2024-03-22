@@ -1,37 +1,43 @@
-const isValidEmail = (email) => {
-    // Define a regular expression pattern for email validation.
-    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return pattern.test(email);
+import React, { useState } from 'react';
 
+function HomePage() {
+  const [mainBodyDisplay, setMainBodyDisplay] = useState('block');
+  const [startBtnDisplay, setStartBtnDisplay] = useState('none');
+  const [adminBtnDisplay, setAdminBtnDisplay] = useState('none');
+  const [mainPanelDisplay, setMainPanelDisplay] = useState('block');
+  const [questions, setQuestions] = useState([]);
 
-const isValidEmail = (email) => {
-      const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      return pattern.test(email);
-    };
+  const handleHomePage = () => {
+    setMainBodyDisplay('none');
+    setStartBtnDisplay('block');
+    setAdminBtnDisplay('block');
+    setMainPanelDisplay('none');
+    setQuestions([]); // Clearing questions array
+  };
 
+  return (
+    <div>
+      <div id="mainBody" style={{ display: mainBodyDisplay }}>
+        Main Body Content
+      </div>
+      <button id="startBtn" style={{ display: startBtnDisplay }}>
+        Start Button
+      </button>
+      <button id="adminBtn" style={{ display: adminBtnDisplay }}>
+        Admin Button
+      </button>
+      <div id="mainPanel" style={{ display: mainPanelDisplay }}>
+        Main Panel Content
+      </div>
+      <ul id="questionsUl">
+        {questions.map((question, index) => (
+          <li key={index}>{question}</li>
+        ))}
+      </ul>
+      <button onClick={handleHomePage}>Done Button</button>
+    </div>
+  );
+}
 
+export default HomePage;
 
-
-const login = (e) => {
-        e.preventDefault();
-        emailerrorref.current.innerText = pwderrorref.current.innerText = "";
-        servererrorref.current.style.visibility = 'hidden';
-        servererrorref.current.style.visibility = 'hidden';
-        if (loginuser.Email == '' || loginuser.Password == '' || loginuser.Password.length < 8 || !isValidEmail(loginuser.Email)) {
-            if (loginuser.Email == '') {
-                // emailerrorref.current.style.visibility = 'visible'
-                emailerrorref.current.innerText = "*Required! enter a email"
-
-
-            } else if (!isValidEmail(loginuser.Email)) {
-                // emailerrorref.current.style.visibility = 'visible'
-                emailerrorref.current.innerText = "*Required! Invalid email format"
-            }
-
-            if (loginuser.Password == '') {
-                // pwderrorref.current.style.visibility = 'visible'
-                pwderrorref.current.innerText = "*Required! enter a password"
-            } else if (loginuser.Password.length < 8) {
-                // pwderrorref.current.style.visibility = 'visible'
-                pwderrorref.current.innerText = "*Required! must contain 8 character"
-            }
