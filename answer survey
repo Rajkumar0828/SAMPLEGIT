@@ -1,0 +1,54 @@
+import React, { useState } from 'react';
+
+function AnswerSurvey({ questions }) {
+  const [answers, setAnswers] = useState(Array(questions.length).fill(''));
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleAnswerChange = (index, value) => {
+    const newAnswers = [...answers];
+    newAnswers[index] = value;
+    setAnswers(newAnswers);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Calculate percentage of correct answers
+    const correctAnswersCount = questions.reduce((count, question, index) => {
+      return question.options[question.correctOptionIndex] === answers[index] ? count + 1 : count;
+    }, 0);
+    const percentage = (correctAnswersCount / questions.length) * 100;
+    alert(`Percentage of correct answers: ${percentage.toFixed(2)}%`);
+    setSubmitted(true);
+  };
+
+  if (submitted) {
+    return <p>Survey has been submitted.</p>;
+  }
+
+  return (
+    <div>
+      <h2>Answer Survey</h2>
+      <form onSubmit={handleSubmit}>
+        {questions.map((question, index) => (
+          <div key={index}>
+            <p>{question.question}</p>
+            <select
+              value={answers[index]}
+              onChange={(e) => handleAnswerChange(index, e.target.value)}
+              required
+            >
+              {question.options.map((option, optionIndex) => (
+                <option key={optionIndex} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+          </div>
+        ))}
+        <button type="submit">Submit Survey</button>
+      </form>
+    </div>
+  );
+}
+
+export default AnswerSurvey;
