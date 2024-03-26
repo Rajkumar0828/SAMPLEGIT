@@ -1,65 +1,68 @@
-import React, { useState } from 'react';
+import React from "react";
+import "./App.css";
+import {
+  PieChart,
+  Pie,
+  Tooltip,
+  BarChart,
+  XAxis,
+  YAxis,
+  Legend,
+  CartesianGrid,
+  Bar,
+} from "recharts";
 
-const QuestionForm = ({ addQuestion }) => {
-  const [question, setQuestion] = useState('');
-  const [options, setOptions] = useState(['', '']);
-
-  const handleOptionChange = (index, value) => {
-    const newOptions = [...options];
-    newOptions[index] = value;
-    setOptions(newOptions);
-  };
-
-  const handleAddOption = () => {
-    setOptions([...options, '']);
-  };
-
-  const handleRemoveOption = (index) => {
-    const newOptions = [...options];
-    newOptions.splice(index, 1);
-    setOptions(newOptions);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    addQuestion({ question, options });
-    setQuestion('');
-    setOptions(['', '']);
-  };
+const App = () => {
+  const data = [
+    { name: "Facebook", users: 2000000000 },
+    { name: "Instagram", users: 1500000000 },
+    { name: "Twiter", users: 1000000000 },
+    { name: "Telegram", users: 500000000 },
+  ];
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Question:
-        <input
-          type="text"
-          value={question}
-          onChange={(e) => setQuestion(e.target.value)}
-          required
-        />
-      </label>
-      {options.map((option, index) => (
-        <div key={index}>
-          <label>
-            Option {index + 1}:
-            <input
-              type="text"
-              value={option}
-              onChange={(e) => handleOptionChange(index, e.target.value)}
-              required
-            />
-          </label>
-          <button type="button" onClick={() => handleRemoveOption(index)}>
-            Remove Option
-          </button>
-        </div>
-      ))}
-      <button type="button" onClick={handleAddOption}>
-        Add Option
-      </button>
-      <button type="submit">Add Question</button>
-    </form>
+    <div style={{ textAlign: "center" }}>
+      <h1>Socail Media Users</h1>
+      <div className="App">
+        <PieChart width={400} height={400}>
+          <Pie
+            dataKey="users"
+            isAnimationActive={false}
+            data={data}
+            cx={200}
+            cy={200}
+            outerRadius={80}
+            fill="#8884d8"
+            label
+          />
+          <Tooltip />
+        </PieChart>
+        <BarChart
+          width={500}
+          height={300}
+          data={data}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 80,
+            bottom: 5,
+          }}
+          barSize={20}
+        >
+          <XAxis
+            dataKey="name"
+            scale="point"
+            padding={{ left: 10, right: 10 }}
+          />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <CartesianGrid strokeDasharray="3 3" />
+          <Bar dataKey="users" fill="#8884d8" background={{ fill: "#eee" }} />
+        </BarChart>
+      </div>
+    </div>
   );
 };
 
-export default QuestionForm;
+export default App;
